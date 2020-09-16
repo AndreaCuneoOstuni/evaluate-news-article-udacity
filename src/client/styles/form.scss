@@ -1,0 +1,32 @@
+form {
+    border: 3px solid #acafa0;
+    background-color: #c6cdc4;
+    border-radius: 3px;
+    padding: 40px;
+    input {
+        padding: 5px 20px;
+        width: 100%;
+        line-height: 16px;
+        margin: 10px 0;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+#app-data {
+    background-color: #aeac82;
+    padding: 2rem;
+    .item {
+        margin-left: 2rem;
+        text-transform: capitalize;
+    }
+}
+
+#user-warning {
+    background-color: #e64e4e;
+    margin-bottom: 2rem;
+    padding: 1.3rem;
+    font-size: 1.3rem;
+}

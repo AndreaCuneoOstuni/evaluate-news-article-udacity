@@ -7,13 +7,33 @@ module.exports = {
     entry: './src/client/index.js',
     mode: 'development',
     devtool: 'source-map',
-    stats: 'verbose',
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
     module: {
         rules: [
             {
                 test: '/\.js$/',
                 exclude: /node_modules/,
                 loader: "babel-loader"
+            },
+            {
+                test: /\.scss$/,
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+            },
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: [
+                    'file-loader',
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            bypassOnDebug: true, // webpack@1.x
+                            disable: true, // webpack@2.x and newer
+                        },
+                    },
+                ],
             }
         ]
     },
